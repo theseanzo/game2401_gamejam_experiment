@@ -31,9 +31,10 @@ public class InteractableObject : MonoBehaviour
 
     [SerializeField]
     UnityEvent interactionEvent;
+
     void Start()
     {
-        
+        this.GetComponent<GameEventListener>().OnDisable();
     }
 
     // Update is called once per frame
@@ -44,18 +45,18 @@ public class InteractableObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("There is a trigger collider over top of us");
-        if(collision.gameObject.GetComponent<Flashlight>())
-            interactionEvent?.AddListener(InteractedWith);
+        if (collision.gameObject.GetComponent<Flashlight>())
+            this.GetComponent<GameEventListener>().OnEnable();
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("There is a trigger collider over top of us");
         if (collision.gameObject.GetComponent<Flashlight>())
-            interactionEvent?.RemoveListener(InteractedWith);
+            this.GetComponent<GameEventListener>().OnDisable();
     }
-    private void InteractedWith()
+    public void InteractedWith()
     {
-        
+        Debug.Log("We were interacted with");
     }
 }
 public enum InteractableObjectState

@@ -125,6 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e7a8431a0b50e4689490cb83210bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerEvent: {fileID: 11400000, guid: 8823587fbeaca6540981dc9a9910098f, type: 2}
 --- !u!60 &8541428457205836901
 PolygonCollider2D:
   m_ObjectHideFlags: 0
