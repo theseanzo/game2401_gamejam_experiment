@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     {
         //we aren't going to use our update to set the position; instead, we will use it to set up our movement
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized ;  //we want to make sure to normalize our value 
+
+
     }
 
     private void FixedUpdate()
